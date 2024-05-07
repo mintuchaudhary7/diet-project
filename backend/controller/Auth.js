@@ -99,22 +99,14 @@ exports.signup = async (req, res) => {
       return;
     }
     let hasedpassward;
-    try {
-      //hashing script bycript is a hashing techqnique
-      hasedpassward = await bcrypt.hash(Passward, 10);
-    } catch (error) {
-      return res.status(500).json({
-        success: false,
-        massage: "Error occured in hashing passward",
-      });
-    }
+    
 
     // if we reached here then it means that user does no exist
     //creating an database entry for user
     const User = await user.create({
       Name,
       Email,
-      Passward: hasedpassward,
+      Passward,
       ContactNo,
       Role,
     });
