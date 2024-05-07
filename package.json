@@ -2,5 +2,16 @@
   "dependencies": {
     "react-avatar": "^5.0.3",
     "react-toastify": "^10.0.5"
-  }
+  },
+  "name": "diet-project",
+  "description": "It is a digital dietician App/Portal, based on Pure Veg and Non-Veg and Vegan folks based on BMR, Age, Sex, and Activity.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

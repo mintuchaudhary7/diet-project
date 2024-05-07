@@ -6,7 +6,7 @@ const Notificationbar = () => {
     const [menu, setMenu] = useState([]);
 
     const getNotification = async () => {
-        const response = await fetch("http://localhost:2000/notification", {
+        const response = await fetch("https://diet-project-gp3f.onrender.com/notification", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

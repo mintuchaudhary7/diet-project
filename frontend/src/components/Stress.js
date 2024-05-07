@@ -17,7 +17,7 @@ const Stress = () => {
   ];
 
   const stress = async () => {
-    const response = await fetch("http://localhost:2000/services/stress", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/services/stress", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const PendingQuery = ({ menu, fetchQuestion }) => {
   const handleReplySubmit = async () => {
     const data = { reply, id };
     const response = await fetch(
-      `http://localhost:2000/user/dietition/submit-dietiton-response`,
+      `https://diet-project-gp3f.onrender.com/user/dietition/submit-dietiton-response`,
       {
         method: "POST",
         headers: {

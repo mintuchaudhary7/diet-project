@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [categoryresp, setcategoryResp] = useState(false);
   const fetchUsers = async (e) => {
     // const data = { islogin };
-    const response = await fetch("http://localhost:2000/dashboard", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/dashboard", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const Dashboard = () => {
       setSelectedCategory(category);
       const categoryDetails = async () => {
         const response = await fetch(
-          `http://localhost:2000/${category}`,
+          `https://diet-project-gp3f.onrender.com/${category}`,
           {
             method: "POST",
             headers: {

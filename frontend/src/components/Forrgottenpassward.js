@@ -21,7 +21,7 @@ const Forrgottenpassward = () => {
 
     var data = { Email };
     console.log(data);
-    const response = await fetch("http://localhost:2000/forgottenpassward", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/forgottenpassward", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

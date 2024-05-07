@@ -19,7 +19,7 @@ const WeightGain = () => {
     setSelectedDay(day);
   };
   const weightGain = async () => {
-    const response = await fetch("http://localhost:2000/services/weightgain", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/services/weightgain", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

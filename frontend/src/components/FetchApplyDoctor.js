@@ -10,7 +10,7 @@ const FetchApplyDoctor = () => {
 
   const fetchApplications = async () => {
     try {
-      const response = await fetch(`http://localhost:2000/data/${pending}`, {
+      const response = await fetch(`https://diet-project-gp3f.onrender.com/data/${pending}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

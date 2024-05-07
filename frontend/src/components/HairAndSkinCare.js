@@ -20,7 +20,7 @@ const HairandSkincare = () => {
   };
   const hairandskindata = async () => {
     const response = await fetch(
-      "http://localhost:2000/services/haireandskincare",
+      "https://diet-project-gp3f.onrender.com/services/haireandskincare",
       {
         method: "GET",
         headers: {

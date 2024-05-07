@@ -7,7 +7,7 @@ const DietitionNavbar = ()=>{
     const logout = async(e)=>{
       e.preventDefault();
       
-      const response = await fetch("http://localhost:2000/logout", {
+      const response = await fetch("https://diet-project-gp3f.onrender.com/logout", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

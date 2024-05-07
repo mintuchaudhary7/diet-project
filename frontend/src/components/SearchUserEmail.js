@@ -16,7 +16,7 @@ const SearchDietitionEmail = (props) => {
     e.preventDefault(); // Prevent the form from submitting in the traditional way
     console.log("Finding user:", email);
     const data = { email };
-    const response = await fetch(`http://localhost:2000/${route}`, {
+    const response = await fetch(`https://diet-project-gp3f.onrender.com/${route}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

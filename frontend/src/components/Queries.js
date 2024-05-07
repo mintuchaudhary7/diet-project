@@ -11,7 +11,7 @@ const Queries = () => {
   const [count,setCount] = useState({});
 
   const FetchQueries = async (option) => {
-    const response = await fetch(`http://localhost:2000/selected/${option}`, {
+    const response = await fetch(`https://diet-project-gp3f.onrender.com/selected/${option}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

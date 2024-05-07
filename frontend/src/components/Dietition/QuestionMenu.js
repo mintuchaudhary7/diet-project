@@ -17,7 +17,7 @@ const QuestionMenu = () => {
 
   const fetchQuestion = async () => {
     const response = await fetch(
-      `http://localhost:2000/user/dietition/fetchUserQuestions/${status}`,
+      `https://diet-project-gp3f.onrender.com/user/dietition/fetchUserQuestions/${status}`,
       {
         method: "Get",
         headers: {

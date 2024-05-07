@@ -6,7 +6,7 @@ const ProtectedRoute = ({children})=>{
     const nevigate = useNavigate();
     const protectedRoute = async()=>{
         const response = await fetch(
-            "http://localhost:2000/protected",
+            "https://diet-project-gp3f.onrender.com/protected",
             {
               method: "GET",
               headers: {

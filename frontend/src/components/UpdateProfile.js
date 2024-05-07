@@ -31,7 +31,7 @@ const UpdateProfile = () => {
     });
   };
   const firstRender=async()=>{
-    const response = await fetch("http://localhost:2000/profile/updateprofile", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/profile/updateprofile", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const UpdateProfile = () => {
     e.preventDefault();
     // You can handle form submission here
     var addUser = {profile};
-    const response = await fetch("http://localhost:2000/profile/updateprofile", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/profile/updateprofile", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

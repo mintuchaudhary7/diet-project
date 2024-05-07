@@ -9,7 +9,7 @@ const DashboardCard = ({ user }) => {
     setShowAllDetails((prev) => !prev);
   };
   const deleteDetails = async(e)=>{
-    const response = await fetch("http://localhost:2000/", {
+    const response = await fetch("https://diet-project-gp3f.onrender.com/", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
