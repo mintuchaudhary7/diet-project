@@ -2,19 +2,15 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const dbConnect = async()=>{
-    const uri = process.env.DATABASE_URL
-     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     
-    try {
-        await client.connect();
-        console.log("Connected to MongoDB cluster successfully!");
-        // You can now perform operations on your MongoDB database
-    } catch (error) {
-        console.error("Error connecting to MongoDB cluster:", error);
-    } finally {
-        // Close the connection when done
-        await client.close();
-    }
+    mongoose.connect(process.env.DATABASE_URL);
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected to database.');
+});
 }
 module.exports = dbConnect;
 
