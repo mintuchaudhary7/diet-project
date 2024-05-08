@@ -5,7 +5,7 @@ const WeightGain = async (req, res) => {
     var decoded;
     //const token = req.cookies.token;
     const token = req.headers.authorization.split(" ")[1];
-    if (!token || token === undefined) {
+    if (!token || token === undefined || token ==="null") {
       return res.status(400).json({
         success: false,
         message: "Not a verified user please login",
