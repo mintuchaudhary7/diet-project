@@ -1,6 +1,6 @@
 const user = require("../models/schema");
 const nodemailer = require("nodemailer");
-require('dotenv')
+require('dotenv').config()
 const Forgotpassward = async(req,res)=>{
     try{
         const {Email} = req.body;
