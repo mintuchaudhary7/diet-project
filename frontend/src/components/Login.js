@@ -48,6 +48,7 @@ const Login = () => {
     }
     if (response.ok) {
       console.log(result);
+      const token = result.token
       localStorage.setItem('token', token);
       setRole(result.User.Role);
       // making all the feilds empty
