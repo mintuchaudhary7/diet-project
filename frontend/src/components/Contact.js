@@ -20,10 +20,12 @@ const Contact = () => {
     console.log(addUser);
 
     // api call where we have to send data
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       body: JSON.stringify(addUser),

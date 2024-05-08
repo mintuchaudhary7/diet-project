@@ -6,10 +6,12 @@ const Notificationbar = () => {
     const [menu, setMenu] = useState([]);
 
     const getNotification = async () => {
+        const token = localStorage.getItem('token')
         const response = await fetch("https://diet-project-gp3f.onrender.com/notification", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`,
             },
             credentials: "include", // Ensure the backend supports credentials (cookies)
         });

@@ -23,10 +23,12 @@ const ShowQueries = (props) => {
     }
   }, [user]);
   const MarkasSolved = async () => {
+    const token = localStorage.getItem('token')
     const response = await fetch(`https://diet-project-gp3f.onrender.com/id/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       // body: JSON.stringify(),

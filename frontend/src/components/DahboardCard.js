@@ -9,10 +9,12 @@ const DashboardCard = ({ user }) => {
     setShowAllDetails((prev) => !prev);
   };
   const deleteDetails = async(e)=>{
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       // body: JSON.stringify(),

@@ -17,10 +17,12 @@ const Stress = () => {
   ];
 
   const stress = async () => {
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/services/stress", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       // body: JSON.stringify(),

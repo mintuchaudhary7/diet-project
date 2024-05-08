@@ -31,10 +31,12 @@ const UpdateProfile = () => {
     });
   };
   const firstRender=async()=>{
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/profile/updateprofile", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
     //   body: JSON.stringify(),
@@ -64,10 +66,12 @@ const UpdateProfile = () => {
     e.preventDefault();
     // You can handle form submission here
     var addUser = {profile};
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/profile/updateprofile", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       body: JSON.stringify(addUser),

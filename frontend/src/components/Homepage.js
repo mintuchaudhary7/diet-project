@@ -21,6 +21,7 @@ const Home = () => {
     // try catch block is for cathing the erros
     try {
       // making a api call
+      
       const response = await fetch("https://type.fit/api/quotes");
       // converting the response to json
       const result = await response.json();

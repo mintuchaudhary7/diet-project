@@ -43,10 +43,12 @@ const PasswordChangePage = () => {
     var data = {Email,Passward}
     console.log(data);
     //  api call and request is put because we are prforming update operation
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/changepassward", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });

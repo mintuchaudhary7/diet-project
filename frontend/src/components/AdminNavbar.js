@@ -11,10 +11,12 @@ const AdminNavbar = () => {
   };
   const Logout = async(e)=>{
     e.preventDefault();
-    
+    const token = localStorage.getItem('token')
+    localStorage.clear();
     const response = await fetch("https://diet-project-gp3f.onrender.com/logout", {
       method: "GET",
       headers: {
+        'Authorization': `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       credentials: "include",

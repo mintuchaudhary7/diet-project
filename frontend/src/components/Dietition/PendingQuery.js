@@ -12,11 +12,13 @@ const PendingQuery = ({ menu, fetchQuestion }) => {
   //   console.log(menu._id)
   const handleReplySubmit = async () => {
     const data = { reply, id };
+    const token = localStorage.getItem('token')
     const response = await fetch(
       `https://diet-project-gp3f.onrender.com/user/dietition/submit-dietiton-response`,
       {
         method: "POST",
         headers: {
+          'Authorization': `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         credentials: "include",

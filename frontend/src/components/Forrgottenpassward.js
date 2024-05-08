@@ -21,10 +21,12 @@ const Forrgottenpassward = () => {
 
     var data = { Email };
     console.log(data);
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/forgottenpassward", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });

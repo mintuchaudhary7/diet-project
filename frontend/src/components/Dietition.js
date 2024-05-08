@@ -10,10 +10,12 @@ const Dietition = () => {
   const [respgot,setRespgot] = useState(false);
   const fetchUsers = async (e) => {
     // const data = { islogin };
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/dietition", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       // body: JSON.stringify(),

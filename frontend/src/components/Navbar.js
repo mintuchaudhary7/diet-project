@@ -23,10 +23,13 @@ const Navbar = () => {
   };
   // logout function
   const logout = async () => {
+    const token = localStorage.getItem('token')
+    localStorage.clear();
     const response = await fetch("https://diet-project-gp3f.onrender.com/logout", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       // body: JSON.stringify(),

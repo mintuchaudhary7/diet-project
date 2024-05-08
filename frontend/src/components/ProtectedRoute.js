@@ -5,12 +5,14 @@ import { toast } from "react-toastify";
 const ProtectedRoute = ({children})=>{
     const nevigate = useNavigate();
     const protectedRoute = async()=>{
-        const response = await fetch(
-            "https://diet-project-gp3f.onrender.com/protected",
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
+      const token = localStorage.getItem('token')
+      const response = await fetch(
+        "https://diet-project-gp3f.onrender.com/protected",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`,
               },
               credentials: "include",
               // body: JSON.stringify(),

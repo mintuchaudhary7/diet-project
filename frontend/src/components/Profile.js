@@ -22,10 +22,12 @@ const Profile = () => {
     stressdescription:""
   });
   const firstRender = async () => {
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/profile", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
     });

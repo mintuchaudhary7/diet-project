@@ -16,10 +16,12 @@ const SearchDietitionEmail = (props) => {
     e.preventDefault(); // Prevent the form from submitting in the traditional way
     console.log("Finding user:", email);
     const data = { email };
+    const token = localStorage.getItem('token')
     const response = await fetch(`https://diet-project-gp3f.onrender.com/${route}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       body: JSON.stringify(data),

@@ -25,10 +25,12 @@ const ApplyDietition = () => {
     // You can handle form submission logic here (e.g., send data to backend)
     console.log("Form submitted:", formData);
     const DietitionData = { formData };
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/applydietitonform", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       body: JSON.stringify(DietitionData),

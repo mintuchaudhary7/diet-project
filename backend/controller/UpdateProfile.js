@@ -7,14 +7,15 @@ const UpdateProfile = async (req, res) => {
     const { profile } = req.body;
     var decoded;
     // token required because only verified user or logged in user can update profile and also for email by which we can search user
-    const token = req.cookies.token;
+    //const token = req.cookies.token;
+    const token = req.headers.authorization.split(" ")[1];
     // console.log("update" + token)
     // var authorization = req.headers.authorization.split(' ')[1],
     // decoded;
     // console.log("sahil")
     // here we are checking token is present or not if token is not present we send an error response if present then we can proceed further
     try {
-      if(!token || token === undefined){
+      if(!token || token === undefined ){
         res.status(400).json({
           success:false,
           message:"Not a verified user please login"

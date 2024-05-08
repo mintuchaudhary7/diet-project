@@ -7,12 +7,14 @@ const UserDietitionQuestion = () => {
     event.preventDefault();
     // alert(`You entered: ${question}`);
     const data = { question };
+    const token = localStorage.getItem('token')
     const response = await fetch(
       "https://diet-project-gp3f.onrender.com/user/dietition/question",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          'Authorization': `Bearer ${token}`,
         },
         credentials: "include",
         body: JSON.stringify(data),

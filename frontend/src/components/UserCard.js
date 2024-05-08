@@ -13,10 +13,12 @@ const UserCard = ({ user,reload }) => {
 
   const handleDelete = async () => {
     try {
+      const token = localStorage.getItem('token')
       const response = await fetch(`https://diet-project-gp3f.onrender.com/delete/${user._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         credentials: 'include',
       });

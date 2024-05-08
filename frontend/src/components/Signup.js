@@ -52,10 +52,12 @@ const Signup = () => {
     console.log(addUser);
     // eslint-disable-next-line no-unused-expressions
     // api call same as login
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(addUser),
     });

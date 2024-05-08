@@ -16,11 +16,13 @@ const QuestionMenu = () => {
   };
 
   const fetchQuestion = async () => {
+    const token = localStorage.getItem('token')
     const response = await fetch(
       `https://diet-project-gp3f.onrender.com/user/dietition/fetchUserQuestions/${status}`,
       {
         method: "Get",
         headers: {
+          'Authorization': `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         credentials: "include",

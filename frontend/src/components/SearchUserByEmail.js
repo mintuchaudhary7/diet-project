@@ -12,10 +12,12 @@ const SearchUserByEmail = () => {
     var data = { email };
     console.log("Finding user:", data);
     // Add the logic to actually fetch the user data based on the email
+    const token = localStorage.getItem('token')
     const response = await fetch("https://diet-project-gp3f.onrender.com/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`,
       },
       credentials: "include",
       body: JSON.stringify(data),
