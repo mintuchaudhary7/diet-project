@@ -16,17 +16,7 @@ const WeightGain = async (req, res) => {
       const jwt = require("jsonwebtoken");
       const decode = jwt.verify(token, process.env.JWT_SECRET);
       console.log(decode)
-      if (decode) {
-        const Email = decode.Email;
-        const data = await user.findOne({ Email });
-        // console.log(data)
-        if (data) {
-          res.locals.role = data.Role; // Assigning user role to res.locals
-          console.log("User role:", data.Role);
-        } else {
-          console.log("User not found in database");
-        }
-      }
+      
 
       
     } catch (error) {
