@@ -12,6 +12,29 @@ const WeightGain = async (req, res) => {
       });
     }
     console.log("reached");
+     try {
+      const jwt = require("jsonwebtoken");
+      const decode = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(decode)
+      if (decode) {
+        const Email = decode.Email;
+        const data = await user.findOne({ Email });
+        // console.log(data)
+        if (data) {
+          res.locals.role = data.Role; // Assigning user role to res.locals
+          console.log("User role:", data.Role);
+        } else {
+          console.log("User not found in database");
+        }
+      }
+
+      
+    } catch (error) {
+      return res.status(400).json({
+        success: false,
+        message: error.message,
+      });
+    }
     return res.status(200).json({
       success: true,
       message: "Success",
